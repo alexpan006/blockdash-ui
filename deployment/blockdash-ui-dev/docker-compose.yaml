@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ui-dev:
+    image: ghcr.io/uni-mannheim-blockchain-dashboard/blockdash-ui:main
+    tty: true
+    stdin_open: true
+    pull_policy: always
+    restart: unless-stopped
+    ports:
+      - 3001:3000
+    environment:
+      - API_URL=http://localhost:4000/
